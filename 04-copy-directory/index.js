@@ -22,7 +22,7 @@ async function mkDir() {
     for (const file of filesDest) {
       promise.unlink(path.join(destPath, file.name));
     }
-    await promise.rmdir(destPath);
+    await promise.rmdir(destPath, { recursive: true});
     console.log('Rebuilding Folder...');
     mkDir();
   }

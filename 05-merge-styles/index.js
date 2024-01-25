@@ -14,6 +14,7 @@ async function bundleStyles() {
     for (const file of rf) {
       const fileRes = file.name.split('.')[1];
       if (file.isFile() && fileRes === 'css') {
+        console.log(typeof path.join(file.path, file.name));
         const readstream = createReadStream(
           path.join(file.path, file.name),
           'utf-8',
